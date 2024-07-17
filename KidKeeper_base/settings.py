@@ -1,3 +1,4 @@
+# KidKeeper_base/settings.py
 import os
 from dotenv import load_dotenv
 from pathlib import Path
@@ -96,5 +97,7 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
-AUTH_USER_MODEL = 'KidKeeper_register_admin.RegisterAdminWorker'
-LOGIN_REDIRECT_URL = 'KidKeeper_dashboard:admin-dashboard'
+AUTH_USER_MODEL = "KidKeeper_register_admin.RegisterAdminWorker"
+LOGIN_REDIRECT_URL = "KidKeeper_dashboard:admin-dashboard"
+LOGOUT_REDIRECT_URL = "/"
+LOGIN_URL = "KidKeeper_register_admin:login"
