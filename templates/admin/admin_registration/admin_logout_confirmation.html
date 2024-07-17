@@ -2,8 +2,8 @@
 {% load static %}
 
 {% block content %}
-<h2>Are you sure you want to logout?</h2>
-<form method="post" action="{% url 'KidKeeper_register_admin:perform_logout' %}">
+<h2>Are you sure you want to logout, {{ admin_worker_user.first_name }}?</h2>
+<form method="post" action="{% url 'KidKeeper_register_admin:perform-admin-worker-logout' %}">
     {% csrf_token %}
     <button type="submit">Yes, logout</button>
 </form>

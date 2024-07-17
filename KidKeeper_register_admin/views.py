@@ -17,11 +17,16 @@ def register_admin_worker(request):
     return render(request, "admin/admin_registration/register.html", {"form": form})
 
 
-def logout_confirmation(request):
-    return render(request, "admin/admin_registration/admin_logout_confirmation.html")
+def logout_admin_worker_confirmation(request):
+    admin_worker_user = request.user
+    return render(
+        request,
+        "admin/admin_registration/admin_logout_confirmation.html",
+        {"admin_worker_user": admin_worker_user},
+    )
 
 
-def perform_logout(request):
+def perform_admin_worker_logout(request):
     if request.method == "POST":
         logout(request)
         return redirect("KidKeeper_register_admin:login")
@@ -29,7 +34,7 @@ def perform_logout(request):
         return redirect("KidKeep_dashboard:admin-dashboard")
 
 
-def custom_login_view(request):
+def custom_admin_worker_login_view(request):
     if request.method == "POST":
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():

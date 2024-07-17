@@ -10,7 +10,7 @@ urlpatterns = [
         views.register_admin_worker,
         name="register-admin-worker",
     ),
-    path("login/", views.custom_login_view, name="login"),
-    path("logout/", views.logout_confirmation, name="logout_confirmation"),
-    path("perform_logout/", views.perform_logout, name="perform_logout"),
+    path("login/", views.custom_admin_worker_login_view, name="login"),
+    path("logout/", views.logout_admin_worker_confirmation, name="logout-admin-worker-confirmation"),
+    path("perform_logout/", views.perform_admin_worker_logout, name="perform-admin-worker-logout"),
 ]

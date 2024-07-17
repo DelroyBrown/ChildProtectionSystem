@@ -1,6 +1,13 @@
+<!-- templates/admin/admin_dashboard/admin_dashboard.html -->
 {% extends 'dashboard_base.html' %}
 
 {% block content %}
-<a href="{% url 'KidKeeper_register_admin:logout_confirmation' %}">Logout</a>
-<h1>ADMIN DASHBOARD.</h1>
+<a href="{% url 'KidKeeper_register_admin:logout-admin-worker-confirmation' %}">Logout</a>
+<h1>ADMIN DASHBOARD</h1>
+<p>Welcome, {{ admin_worker_user.first_name }} {{ admin_worker_user.last_name }}</p>
+<p>Email: {{ admin_worker_user.email }}</p>
+<p>Phone Number: {{ admin_worker_user.phone_number }}</p>
+<p>Address: {{ admin_worker_user.address }}</p>
+<p>Date of Birth: {{ admin_worker_user.date_of_birth }}</p>
+<p>Super Admin: {{ admin_worker_user.is_super_admin }}</p>
 {% endblock %}
